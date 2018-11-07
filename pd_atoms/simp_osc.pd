@@ -1,0 +1,22 @@
+#N canvas 535 269 308 456 10;
+#X obj 86 251 osc~ 440;
+#X obj 86 288 *~;
+#X obj 63 340 dac~ 1 2;
+#X obj 57 38 tgl 35 0 empty empty empty 17 7 0 10 -204786 -1 -1 0 1
+;
+#X msg 57 83 \; pd dsp \$1;
+#X obj 162 263 hsl 64 25 0 0.99 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 45 199 600;
+#X msg 86 200 1200;
+#X floatatom 136 200 5 0 0 0 - - -;
+#X text 131 291 Volume: set range 0-.99;
+#X text 100 44 Sound On/Off;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;
+#X connect 3 0 4 0;
+#X connect 5 0 1 1;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;

@@ -1,0 +1,44 @@
+#N canvas 168 267 419 463 10;
+#X obj 50 142 soundfiler;
+#X floatatom 50 173 15 0 0 0 - - -;
+#X obj 50 289 bng 25 250 50 0 empty empty empty 17 7 0 10 -204786 -1
+-1;
+#X obj 50 409 dac~;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array sampleTable 81765 float 2;
+#X coords 0 1 81765 -1 200 140 1 0 0;
+#X restore 190 160 graph;
+#X text 68 13 <-- Click to load a different sample;
+#X obj 117 93 loadbang;
+#X obj 50 38 openpanel;
+#X obj 50 16 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 50 61 read -resize \$1 sampleTable;
+#X obj 50 324 tabplay~ sampleTable;
+#X obj 191 341 spigot;
+#X obj 224 317 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 50 378 *~;
+#X obj 50 264 r LoopOnOff;
+#X obj 191 365 s LoopOnOff;
+#X obj 68 350 hsl 50 18 0 1 0 0 empty empty empty -2 -8 0 10 -204786
+-1 -1 0 1;
+#X text 121 349 Volume;
+#X text 241 314 <-- LOOP on/off;
+#X text 79 294 Play (w/volume);
+#X msg 117 114 read -resize singbowl.wav sampleTable;
+#X connect 0 0 1 0;
+#X connect 2 0 10 0;
+#X connect 6 0 20 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 9 0 0 0;
+#X connect 10 0 13 0;
+#X connect 10 1 11 0;
+#X connect 11 0 15 0;
+#X connect 12 0 11 1;
+#X connect 13 0 3 0;
+#X connect 13 0 3 1;
+#X connect 14 0 2 0;
+#X connect 16 0 13 1;
+#X connect 20 0 0 0;
