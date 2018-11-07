@@ -1,0 +1,38 @@
+#N canvas 165 152 419 463 10;
+#X obj 50 289 bng 25 250 50 0 empty empty empty 17 7 0 10 -204786 -1
+-1;
+#X obj 50 409 dac~;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array sampleTable 60 float 0;
+#X coords 0 1 59 -1 200 140 1 0 0;
+#X restore 155 115 graph;
+#X obj 50 324 tabplay~ sampleTable;
+#X obj 191 341 spigot;
+#X obj 224 317 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 50 378 *~;
+#X obj 50 264 r LoopOnOff;
+#X obj 191 365 s LoopOnOff;
+#X obj 68 350 hsl 50 18 0 1 0 0 empty empty empty -2 -8 0 10 -204786
+-1 -1 1100 1;
+#X text 121 349 Volume;
+#X text 241 314 <-- LOOP on/off;
+#X text 79 294 Play (w/volume);
+#X obj 47 71 tabwrite sampleTable;
+#X floatatom 47 38 5 -1 1 0 - - -;
+#X msg 164 40 30;
+#X floatatom 203 40 3 0 60 0 - - -;
+#X text 159 24 Index to Table Element;
+#X text 43 22 Value;
+#X connect 0 0 3 0;
+#X connect 3 0 6 0;
+#X connect 3 1 4 0;
+#X connect 4 0 8 0;
+#X connect 5 0 4 1;
+#X connect 6 0 1 0;
+#X connect 6 0 1 1;
+#X connect 7 0 0 0;
+#X connect 9 0 6 1;
+#X connect 14 0 13 0;
+#X connect 15 0 13 1;
+#X connect 16 0 13 1;
