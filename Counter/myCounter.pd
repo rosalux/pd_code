@@ -1,0 +1,56 @@
+#N canvas 448 497 470 322 10;
+#X obj 187 58 tgl 25 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 213 63 Start/Stop;
+#N canvas 1181 727 584 362 countMach 0;
+#X obj 182 65 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 182 130 + 1;
+#X floatatom 235 147 5 0 0 0 - - -;
+#X msg 182 96 1;
+#X obj 221 203 sel 10;
+#X obj 221 232 s hlimit;
+#X floatatom 182 175 5 0 0 0 - - -;
+#X obj 246 87 r hlimit;
+#X msg 246 113 0;
+#X floatatom 326 190 5 0 0 0 - - -;
+#X obj 182 282 outlet;
+#X obj 182 29 inlet;
+#X obj 235 29 inlet;
+#X msg 235 66 0;
+#X obj 343 32 inlet;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 1 0 6 0;
+#X connect 2 0 1 1;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 6 0 4 0;
+#X connect 6 0 10 0;
+#X connect 7 0 8 0;
+#X connect 8 0 2 0;
+#X connect 9 0 4 1;
+#X connect 11 0 0 0;
+#X connect 12 0 13 0;
+#X connect 13 0 2 0;
+#X connect 14 0 4 1;
+#X restore 187 158 pd countMach;
+#X obj 187 95 metro 500;
+#X obj 152 58 bng 25 250 50 0 empty empty empty 17 7 0 10 -204786 -1
+-1;
+#X floatatom 187 188 5 0 0 0 - - -;
+#X obj 221 127 bng 20 250 50 0 empty empty empty 17 7 0 10 -261234
+-1 -1;
+#X text 243 128 Reset;
+#X obj 312 122 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 312 145 5 0 0 0 - - -;
+#X text 302 159 Set Max Num;
+#X text 98 60 One-shot;
+#X connect 0 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 6 0 2 1;
+#X connect 8 0 9 0;
+#X connect 9 0 2 2;
